@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site Trop Cool</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            text-align: center;
+        }
+
+        h1 {
+            color: fuchsia;
+            text-shadow: 2px 2px cyan;
+        }
+
+        .box {
+            border: 5px dashed yellow;
+            margin: 20px;
+            padding: 15px;
+            background-color: #111;
+        }
+
+        a {
+            color: cyan;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: red;
+            background-color: yellow;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <marquee behavior="alternate" scrollamount="10">
+        🚀 BIENVENUE SUR MON SITE INTERNET 🚀
+    </marquee>
+
+    <h1 class="blink">SITE OFFICIEL 1998</h1>
+
+    <div class="box">
+        <p>Salut !!! Ceci est mon site perso 😎</p>
+        <p>Il est <font color="red">SUPER</font> <font color="yellow">COOL</font> !!!</p>
+    </div>
+
+    <div class="box">
+        <p>Liens trop importants :</p>
+        <p>
+            👉 <a href="#">Accueil</a><br>
+            👉 <a href="#">Photos</a><br>
+            👉 <a href="#">Livre d'or</a><br>
+            👉 <a href="#">Contact MSN</a>
+        </p>
+    </div>
+
+    <marquee direction="right" scrollamount="5">
+        💾 Optimisé pour Internet Explorer 4.0 💾
+    </marquee>
+
+    <p>
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="gif inutile">
+    </p>
+
+    <p>
+        <small>© 1997-2002 MonSuperSite.free.fr</small>
+    </p>
+
+</body>
+</html>
