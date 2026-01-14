@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Yum ☕ – Employees Playlist of the Month</title>
+  <meta name="description" content="The employees of Local Yum share their favorite tracks!">
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Times New Roman, Arial, serif;
+      color: #000000;
+    }
+    a {
+      color: #0000ff;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: #800080;
+    }
+    .container {
+  width: 1000px; /* wider so images fit nicely */
+  margin: auto;
+  border: 2px solid #000000;
+}
+
+    .header {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 10px;
+    }
+    .nav {
+      background-color: #dddddd;
+      padding: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .content {
+      padding: 10px;
+      font-size: 15px;
+    }
+    .footer {
+      background-color: #f2f2f2;
+      text-align: center;
+      font-size: 11px;
+      padding: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    td {
+      border: 1px solid #000000;
+      padding: 10px;
+      text-align: center;
+      vertical-align: top;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
+    .header img {
+    width: 64px;   /* or whatever matches other pages */
+    height: 64px;
+    }
+    .bye img {
+    width: 240px;   /* or whatever matches other pages */
+    height: 135px;
+    }
+    .note {
+      font-size: 12px;
+      color: #444444;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- Background music -->
+
+
+
+
+
+
+
+<marquee behavior="scroll" direction="left">
+  🎵 EMPLOYEES PLAYLIST OF THE MONTH – LOCAL YUM ☕ 🎵
+</marquee>
+
+<div class="container">
+
+  <div class="header">
+    <h1>LOCAL YUM ☕</h1>
+    <p><i>Employees Playlist of the Month</i></p>
+    <img src="https://github.com/JujuHunter/localyum/blob/assets/coffee.gif?raw=true" alt="Spinning coffee cup" width="64" height="64">
+  </div>
+
+  <div class="nav">
+    <a href="https://jujuhunter.github.io/localyum/">Home</a> |
+    <a href="https://jujuhunter.github.io/localyum/menu.html">Menu</a> |
+    <a href="https://jujuhunter.github.io/localyum/locations.html">Locations</a> |
+    <a href="https://jujuhunter.github.io/localyum/about.html">About Us</a> |
+    <a href="https://jujuhunter.github.io/localyum/careers.html">Careers</a> |
+    <a href="https://jujuhunter.github.io/localyum/contact.html">Contact</a> |
+    <a href="https://jujuhunter.github.io/localyum/news.html">News</a>
+  </div>
+
+  <div class="content">
+
+    <button onclick="playAudio()">▶ Hey! Whats that song?</button> 
+    
+    <p>
+      If you guessed correctly head to the nearest <b>LOCAL YUM</b> and ask for one _ _ _ _ _ ( no days haha!! ) and <b>GET ONE FREE</b>
+    </p>
+    <p class="note">
+      if not on the menu just look for it in the <b>headers</b> and show the winning page!
+    </p>
+    <audio id="playlistAudio">
+      <source src="https://github.com/JujuHunter/localyum/raw/refs/heads/assets/salad.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      function playAudio() {
+        const audio = document.getElementById('playlistAudio');
+        audio.volume = 0.1 // 0.2 = 20% volume
+        audio.play();
+      }
+    </script>
+
+    <p>
+      Each month, our staff picks their favorite songs. This month, our playlist spells out <b>LOCAL</b> using Mac DeMarco tracks!
+    </p>
+
+    <table>
+      <tr>
+        <td>
+          <img src="https://i.scdn.co/image/ab67616d0000b273ec6e9c13eeed14eedbd5f7c9" alt="Song 1 Album Cover">
+          <p><b>Let Her Go</b> – <i>Salad Days</i></p>
+        </td>
+        <td>
+          <img src="https://m.media-amazon.com/images/I/81D8Ok3XMhL._UF894,1000_QL80_.jpg" alt="Song 2 Album Cover">
+          <p><b>Ode to Viceroy</b> – <i>2</i></p>
+        </td>
+        <td>
+          <img src="https://m.media-amazon.com/images/I/81D8Ok3XMhL._UF894,1000_QL80_.jpg" alt="Song 3 Album Cover">
+          <p><b>Cooking Up Something Good</b> – <i>2</i></p>
+        </td>
+        <td>
+          <img src="https://m.media-amazon.com/images/I/81xYHAjhqbL.jpg" alt="Song 4 Album Cover">
+          <p><b>Another One</b> – <i>Another One</i></p>
+        </td>
+        <td>
+          <img src="https://i.scdn.co/image/ab67616d0000b273ec6e9c13eeed14eedbd5f7c9" alt="Song 5 Album Cover">
+          <p><b>Let My Baby Stay</b> – <i>Salad Days</i></p>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      Enjoy the music while sipping your favorite coffee.
+      Your favorites tunes sometimes might not be on the menu! <br>
+      But still we leave a little page for them, I mean why not!!
+    </p>
+    <div class="bye">
+    <img src="https://i.pinimg.com/originals/09/71/b4/0971b495238c0345537ac83bc37a7b7a.gif" alt="Spinning coffee cup" width="64" height="64">
+  </div>
+  </div>
+
+  <div class="footer">
+    © 1996–2026 Local Yum Inc.
+    <br>
+    <a href="https://jujuhunter.github.io/localyum/archive.html">Archive</a> |
+    <a href="https://jujuhunter.github.io/localyum/accessibility.html">Accessibility</a>
+  </div>
+
+</div>
+
+</body>
+</html>
