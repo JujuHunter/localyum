@@ -116,9 +116,20 @@
       This is where the freshest greens meet the spiciest surprises. Keep exploring the site, and you might just find other secret treats!
     </p>
 
-    <button onclick="alert('Oops! You just got a free imaginary salad! 🥗 Enjoy!')">
-      🥗 Get Your Salad!
-    </button>
+    <button onclick="getSalad()">
+    🥗 Get Your Salad!
+  </button>
+  
+  <script>
+    function getSalad() {
+      alert("Oops! You just got a free imaginary salad! 🥗 Enjoy!");
+  
+      var saladSong = new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/weekend.mp3");
+      saladSong.volume = 0.2; // 20% volume
+      saladSong.play();
+    }
+  </script>
+
 
     <p class="note">
       Hint: Another 5 letter item is missing from the menu… 👀👀 <br>
@@ -153,4 +164,5 @@
 
 </body>
 </html>
+
 
