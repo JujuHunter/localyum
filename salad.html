@@ -116,19 +116,26 @@
       This is where the freshest greens meet the spiciest surprises. Keep exploring the site, and you might just find other secret treats!
     </p>
 
-    <button onclick="getSalad()">
+    <button id="saladBtn" onclick="getSalad()">
     🥗 Get Your Salad!
-  </button>
-  
-  <script>
-    function getSalad() {
-      alert("Oops! You just got a free imaginary salad! 🥗 Enjoy!");
-  
-      var saladSong = new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/weekend.mp3");
-      saladSong.volume = 0.2; // 20% volume
-      saladSong.play();
-    }
-  </script>
+    </button>
+    
+    <script>
+      var saladSong = new Audio("assets/salad-days.mp3");
+      saladSong.volume = 0.2;
+      var hasPlayed = false;
+    
+      function getSalad() {
+        alert("Oops! You just got a free imaginary salad! 🥗 Enjoy!");
+    
+        if (!hasPlayed) {
+          saladSong.play();
+          hasPlayed = true;
+          document.getElementById("saladBtn").disabled = true;
+        }
+      }
+    </script>
+
 
 
     <p class="note">
@@ -164,5 +171,6 @@
 
 </body>
 </html>
+
 
 
