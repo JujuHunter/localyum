@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Yum — Lucy in the Sky</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: "Times New Roman", Arial, serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 760px;
+      margin: 40px auto;
+      border: 3px solid #ffffff;
+      background-color: #111111;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p, .lyrics {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    button {
+      font-family: "Courier New", monospace;
+      font-size: 16px;
+      padding: 6px 12px;
+      cursor: pointer;
+      margin-top: 20px;
+      background-color: #222222;
+      color: #00ffcc;
+      border: 2px outset #ffffff;
+    }
+
+    button:hover {
+      background-color: #00ffcc;
+      color: #000000;
+    }
+
+    .lyrics span {
+      display: inline-block;
+      transition: transform 20s linear, color 20s linear;
+    }
+
+    .trippy-img {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 5s linear, transform 10s linear;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container" id="mainContainer">
+
+  <h1>Lucy in the Sky with Diamonds</h1>
+  <p>Press play and watch the world softly drift away...</p>
+
+  <button onclick="startTrip()">▶ Play Song</button>
+
+  <div class="lyrics" id="lyrics">
+    <span>Picture yourself in a boat on a river</span><br>
+    <span>With tangerine trees and marmalade skies</span><br>
+    <span>Somebody calls you, you answer quite slowly</span><br>
+    <span>A girl with kaleidoscope eyes</span><br>
+    <span>Lucy in the sky with diamonds</span>
+  </div>
+
+</div>
+
+<audio id="lucySong">
+  <source src="https://github.com/JujuHunter/localyum/raw/refs/heads/assets/lucy.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const lucy = document.getElementById("lucySong");
+  lucy.volume = 0.2;
+
+  const lyrics = document.getElementById("lyrics");
+  const container = document.getElementById("mainContainer");
+
+  const imageSources = [
+    "https://github.com/JujuHunter/localyum/blob/assets/derp1.webp?raw=true",
+    "https://github.com/JujuHunter/localyum/blob/assets/derp2.webp?raw=true",
+    "https://github.com/JujuHunter/localyum/blob/assets/derp3.png?raw=true",
+    "https://github.com/JujuHunter/localyum/blob/assets/derp4.png?raw=true",
+    "https://github.com/JujuHunter/localyum/blob/assets/derp5.webp?raw=true"
+  ];
+
+  let trippyImages = [];
+
+  function randomColor() {
+    return 'rgb(' + 
+      Math.floor(Math.random()*256) + ',' +
+      Math.floor(Math.random()*256) + ',' +
+      Math.floor(Math.random()*256) + ')';
+  }
+
+  function startTrip() {
+    lucy.play();
+
+    // Lyrics drift and rotate
+    lyrics.querySelectorAll('span').forEach((span, i) => {
+      setTimeout(() => {
+        span.style.transition = 'transform 20s linear, color 20s linear';
+        span.style.transform = 'rotate(' + (Math.random()*360-180) + 'deg) translate(' + (Math.random()*300-150) + 'px,' + (Math.random()*200-100) + 'px)';
+        span.style.color = randomColor();
+      }, i * 1000);
+    });
+
+    // Create image elements
+    imageSources.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'trippy-img';
+      img.style.top = Math.random()*container.offsetHeight + 'px';
+      img.style.left = Math.random()*container.offsetWidth + 'px';
+      img.style.width = (50 + Math.random()*150) + 'px';
+      container.appendChild(img);
+      trippyImages.push(img);
+    });
+
+    // Fade in/out and drift images slowly
+    setInterval(() => {
+      trippyImages.forEach(img => {
+        img.style.opacity = Math.random();
+        img.style.transform = 'translate(' + (Math.random()*200-100) + 'px,' + (Math.random()*200-100) + 'px) rotate(' + (Math.random()*360-180) + 'deg)';
+      });
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>

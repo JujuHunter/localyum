@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Yum — About This Error</title>
+  <style>
+    body {
+      background-color: #eeeeee;
+      font-family: "Times New Roman", Arial, serif;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      width: 760px;
+      margin: 40px auto;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: normal;
+      color: #333333;
+      margin-top: 0;
+    }
+
+    .box {
+      border: 2px dashed #000000;
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .track {
+      margin: 6px 0;
+    }
+
+    button {
+      font-family: Courier, monospace;
+      font-size: 14px;
+      padding: 2px 6px;
+      cursor: pointer;
+    }
+
+    .tip {
+      border: 2px solid #000000;
+      background-color: #ffffdd;
+      padding: 12px;
+      margin: 25px 0;
+      font-size: 15px;
+    }
+
+    .note {
+      font-style: italic;
+      color: #444444;
+      font-size: 14px;
+    }
+
+    a {
+      color: #0000cc;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #cc0000;
+    }
+
+    .small {
+      font-size: 11px;
+      color: #666666;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>ABOUT THIS ERROR</h1>
+  <h2>why some pages won’t load</h2>
+
+  <div class="box">
+    <p>
+      You probably got here because something didn’t open.
+    </p>
+
+    <p>
+      That’s normal.
+    </p>
+
+    <p>
+      Some Local Yum pages aren’t public anymore.
+      Some never were.
+    </p>
+
+    <p>
+      The system usually just sends you to an error page,
+      but sometimes it leaves a code instead.
+    </p>
+
+    <p>
+      <b>mxcdemxrco</b> doesn’t mean anything official.
+    </p>
+
+    <p>
+      It’s just something someone wrote down a long time ago.
+    </p>
+  </div>
+
+  <div class="box">
+    <p>
+      Since you’re here anyway,
+      I figured you might want something to listen to.
+    </p>
+
+    <p class="note">
+      I’m a big fan of tuff music, heard you were too
+    </p>
+
+    <div class="track">
+      <button onclick="playSong('salad')">▶</button>
+      Salad Days — Mac DeMarco
+    </div>
+    <div class="track">
+      <button onclick="playSong('let')">▶</button>
+      Goodbye Weekend — Mac DeMarco
+    </div>
+    <div class="track">
+      <button onclick="playSong('ode')">▶</button>
+      Ode to Viceroy — Mac DeMarco
+    </div>
+    <div class="track">
+      <button onclick="playSong('cook')">▶</button>
+      Cooking Up Something Good — Mac DeMarco
+    </div>
+    <div class="track">
+      <button onclick="playSong('another')">▶</button>
+      Another One — Mac DeMarco
+    </div>
+    <div class="track">
+      <button onclick="playSong('baby')">▶</button>
+      Let My Baby Stay — Mac DeMarco
+    </div>
+
+    <p class="note">
+      Pump that into ur ears and ull be alright belive me ;p
+    </p>
+  </div>
+
+  <div class="tip">
+    <p>
+      One last thing.
+    </p>
+
+    <p>
+      In the archives, some links work and some don’t.
+    </p>
+
+    <p>
+      The letters before them look random,
+      but they’re not.
+    </p>
+
+    <p>
+      If a page opens,
+      the letter mattered.
+    </p>
+  </div>
+
+  <p>
+    <a href="https://jujuhunter.github.io/localyum/archive.html">
+      Back to Archives
+    </a>
+  </p>
+
+  <p class="small">
+    This page isn’t official support.<br>
+    It just explains things the long way.
+  </p>
+
+</div>
+
+<div class="footer">
+  © 1996–2026 Local Yum Inc.<br>
+  <a href="https://jujuhunter.github.io/localyum/archive.html">Archive</a> |
+  <a href="https://jujuhunter.github.io/localyum/accessibility.html">Accessibility</a>
+</div>
+
+<script>
+  var currentSong = null;
+
+  var songs = {
+    salad: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/salad.mp3"),
+    let: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/weekend.mp3"),
+    ode: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/viceroy.mp3"),
+    cook: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/cooking.mp3"),
+    another: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/another.mp3"),
+    baby: new Audio("https://github.com/JujuHunter/localyum/raw/refs/heads/assets/letmybaby.mp3")
+  };
+
+  for (var key in songs) {
+    songs[key].volume = 0.2;
+  }
+
+  function playSong(name) {
+    if (currentSong) {
+      currentSong.pause();
+      currentSong.currentTime = 0;
+    }
+    currentSong = songs[name];
+    currentSong.play();
+  }
+</script>
+
+</body>
+</html>
