@@ -56,6 +56,21 @@
   ☕ WELCOME TO LOCAL YUM ☕ SERVING COMMUNITIES SINCE 1996 ☕ MORE THAN A CAFÉ ☕
 </marquee>
 
+<body onclick="startMusic()">
+<audio id="bgm" loop>
+  <source src="https://github.com/JujuHunter/localyum/raw/refs/heads/assets/another.mp3">
+</audio>
+
+<script>
+function startMusic() {
+  const audio = document.getElementById("bgm");
+  audio.play();
+  document.body.onclick = null;
+}
+</script>
+</body>
+
+  
 <div class="container">
 
   <div class="header">
@@ -156,3 +171,4 @@
 </body>
 
 </html>
+
