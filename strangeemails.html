@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Yum Archives | Strange Emails</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6F4E37; 
+            --accent: #D4A373;  
+            --bg: #FAFAF9;      
+            --glass: rgba(255, 255, 255, 0.7);
+            --error: #e63946;
+            --success: #2a9d8f;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Inter', sans-serif;
+            color: #2D2424;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Nav & Header matching the Homepage */
+        nav {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            max-width: 800px;
+            margin: 20px auto 40px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        nav a { text-decoration: none; color: var(--primary); font-weight: 600; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+        }
+
+        /* Modern Email Card Styling */
+        .email {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-left: 8px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email.hacked {
+            border-left-color: var(--error);
+            background: linear-gradient(to right, #fffafa, #ffffff);
+        }
+
+        .from {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            font-size: 1rem;
+            color: #4a3f35;
+        }
+
+        /* Image Grid */
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .images img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 15px;
+            filter: grayscale(20%);
+            transition: 0.3s;
+        }
+
+        .images img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        /* Glitch Effect for the 2026 Archive vibe */
+        .glitch {
+            position: relative;
+            animation: glitch-anim 3s infinite;
+        }
+
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            1% { transform: translate(-2px, 2px); text-shadow: 1px 0 var(--error); }
+            2% { transform: translate(2px, -2px); text-shadow: -1px 0 skyblue; }
+            3% { transform: translate(0); text-shadow: none; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.85rem;
+            line-height: 2;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        .status-badge {
+            background: #eee;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="locations.html">Locations</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h1 class="glitch">Archive: Strange Emails</h1>
+    <div class="subtitle">
+        INTERNAL LEDGER — 2026 INCIDENT <br>
+        <span style="color: var(--error)">[SYSTEM RECOVERY MODE ACTIVE]</span>
+    </div>
+
+    <div class="email">
+        <div class="status-badge" style="color: var(--success)">SENTIENT_FROG_QUERY</div>
+        <div class="from">marketing@localyum.inc</div>
+        <div class="date">March 3, 2026 – 02:14 AM</div>
+        <div class="content">
+            Why are there 47 emails about frogs? Why do they all say “bolle approved”? Please stop replying all.
+        </div>
+        <div class="images">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyb29ndGN0Nnpvb2g0NXlkendrMDVobzV4czZwb2FyN2hlc25mZXczOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DUNZaXquhdNyVSSnFK/giphy.gif" alt="Frog 1">
+            <img src="https://media2.giphy.com/avatars/dricstudio/iwqV9mX0NYc0.gif" alt="Frog 2">
+        </div>
+    </div>
+
+    <div class="email">
+        <div class="status-badge">UNKNOWN_SOURCE</div>
+        <div class="from">unknown.device.404</div>
+        <div class="date">March 4, 2026 – 11:59 PM</div>
+        <div class="content">
+            salad :)<br>
+            burger :)<br>
+            salad but evil :)
+        </div>
+    </div>
+
+    <div class="email hacked">
+        <div class="status-badge" style="background: var(--error); color: white;">SECURITY_BREACH</div>
+        <div class="from">lol@notlocalyum.com</div>
+        <div class="date">March 6, 2026 – 04:00 AM</div>
+        <div class="content">
+            <h3 style="margin-top:0">lmao i hacked your website</h3>
+            <p>Ok so basically your CMS was bad. Like REALLY bad. I replaced half your homepage with frogs, the other half was bolle gifs.</p>
+            <p>Anyway your IT guy panicked and unplugged everything. So now you’re stuck using the old 90s website.</p>
+            <p><i>ps: the coffee was mid</i></p>
+        </div>
+    </div>
+
+    <div class="email">
+        <div class="status-badge" style="color: var(--primary)">SUPERVISOR_ALERT</div>
+        <div class="from">supervisor@localyum.inc</div>
+        <div class="date">March 7, 2026 – 09:12 AM</div>
+        <div class="content">
+            <strong>TO ALL EMPLOYEES</strong><br>
+            do not try to go back to the 2026 homepage,
+            we are reverting back to the 1999 website, trying to access the 2026 homepage could lead to crashes
+        </div>
+    </div>
+
+    <footer>
+        Due to the 2026 Incident, Local Yum Inc. has reverted to its 
+        <strong>original 1990s web infrastructure</strong> for safety reasons.<br>
+        <em>This page remains accessible by mistake.</em>
+    </footer>
+</div>
+
+</body>
+</html>

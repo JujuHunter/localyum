@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>nyan nyan nyan nyan</title>
+  <style>
+    body {
+      background-color: #000000;
+      font-family: Comic Sans MS, Times New Roman, Arial, serif;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #00ffff;
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 14px;
+      color: #ff00ff;
+    }
+
+    .rainbow {
+      color: red;
+      animation: rainbow 2s infinite;
+      font-weight: bold;
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      16% { color: orange; }
+      33% { color: yellow; }
+      50% { color: green; }
+      66% { color: cyan; }
+      83% { color: blue; }
+      100% { color: magenta; }
+    }
+  </style>
+</head>
+
+<body>
+
+<marquee behavior="scroll" direction="left" scrollamount="10">
+  🌈 🌈 🌈 NYAN MORISSEY NYAN MORISSEY NYAN 🌈 🌈 🌈
+</marquee>
+
+<marquee behavior="scroll" direction="right" scrollamount="6">
+  LOCAL YUM DOES NOT ENDORSE THIS PAGE
+</marquee>
+
+<div class="center">
+  <h1 class="rainbow">NYAN CAT MORISSEY</h1>
+
+  <!-- REPLACE THIS GIF WITH MORISSEY-NYAN CAT -->
+  <img src="https://github.com/JujuHunter/localyum/blob/assets/morisseynyan.gif?raw=true" alt="Nyan Morissey" width="300">
+
+  <p class="rainbow">
+    meow meow coffee meow
+  </p>
+</div>
+
+<!-- RANDOM FLOATING NONSENSE -->
+<div class="floating" style="top: 120px; left: 30px;">
+  he always sits there
+</div>
+
+<div class="floating" style="top: 200px; right: 40px;">
+  free drink forever
+</div>
+
+<div class="floating" style="top: 360px; left: 120px;">
+  ★★★★★
+</div>
+
+<div class="floating" style="bottom: 100px; right: 200px;">
+  milk is optional
+</div>
+
+<div class="floating" style="bottom: 40px; left: 60px;">
+  this page means nothing
+</div>
+
+<div class="floating" style="top: 50%; left: 50%;">
+  nyan
+</div>
+
+<marquee behavior="alternate" scrollamount="12">
+  🌈 ☕ 🌈 ☕ 🌈 ☕ 🌈 ☕ 🌈
+</marquee>
+
+<p style="text-align:center; font-size:12px; margin-top:40px;">
+  archived but why
+</p>
+
+
+</body>
+</html>
+
+<p id="floatingText" style="position:absolute; font-size:20px; background:black; color:white;">
+  NOTHING HERE IS TRUE
+</p>
+<center style="margin-top:20px;">
+  <button onclick="toggleNyan()" style="
+    font-size:16px;
+    font-family: Comic Sans MS, Arial;
+    padding:10px;
+    border:3px solid black;
+    background:yellow;
+    cursor:pointer;
+  ">
+    ▶ PLAY NYAN CAT SONG ◀
+  </button>
+</center>
+<script>
+let angle = 0;
+setInterval(() => {
+  const x = window.innerWidth / 2 + Math.cos(angle) * 200;
+  const y = window.innerHeight / 2 + Math.sin(angle) * 200;
+  document.getElementById("floatingText").style.left = x + "px";
+  document.getElementById("floatingText").style.top = y + "px";
+  angle += 0.02;
+}, 30);
+</script>
+
+<audio id="nyanSong" loop>
+  <source src="https://github.com/JujuHunter/localyum/raw/refs/heads/assets/nyan.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+
+
+<script>
+function toggleNyan() {
+  const audio = document.getElementById("nyanSong");
+  audio.volume = 0.1;
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+</script>
