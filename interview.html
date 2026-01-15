@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Interview – Local Yum</title>
+  <meta name="description" content="Local Yum employment screening questionnaire">
+
+  <style>
+    body {
+      background-color: #fffbe6;
+      font-family: "Courier New", monospace;
+      color: #000000;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .question {
+      margin: 20px 0;
+      padding: 10px;
+      border: 2px dashed #000000;
+      background-color: #ffffff;
+    }
+
+    .question p {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .question label {
+      display: block;
+      margin-left: 10px;
+    }
+
+    #final {
+      margin-top: 30px;
+      padding: 15px;
+      border: 3px solid #000000;
+      background-color: #ffffcc;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      font-family: inherit;
+      padding: 5px;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      font-family: inherit;
+      padding: 5px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>ARE YOU A TRULY LOCAL AND YUMMY EMPLOYEE?</h1>
+<p style="text-align:center;font-size:12px;">
+Employment screening document – do not distribute
+</p>
+
+<!-- QUESTION 1 -->
+<div class="question">
+  <p>1. Have you read the Local Yum Employee Handbook?</p>
+  <label><input type="radio" name="q1"> No</label>
+  <label><input type="radio" name="q1" data-letter="a"> Yes</label>
+  <label><input type="radio" name="q1"> I dont see the need to</label>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="question">
+  <p>2. What is your mission as an employee?</p>
+  <label><input type="radio" name="q2"> Keep it weird. Keep it cozy. Keep it extra yummy.</label>
+  <label><input type="radio" name="q2"> Keep it gay. Keep it derpy. Keep it yum.</label>
+  <label><input type="radio" name="q2" data-letter="b"> Keep it local. Keep it yummy. Keep it fun.</label>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="question">
+  <p>3. Who is allowed to play the piano at the Yummy Bar?</p>
+  <label><input type="radio" name="q3"> Morissey</label>
+  <label><input type="radio" name="q3" data-letter="a"> Dale</label>
+  <label><input type="radio" name="q3"> Nobody</label>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="question">
+  <p>4. Which of these clothes is BANNED in Local Yum?</p>
+  <label><input type="radio" name="q4" data-letter="d"> Low socks</label>
+  <label><input type="radio" name="q4"> Overalls</label>
+  <label><input type="radio" name="q4"> Sweatshirts</label>
+</div>
+
+<!-- QUESTION 5 -->
+<div class="question">
+  <p>5. What latte art should you make on a friday?</p>
+  <label><input type="radio" name="q5"> A frog</label>
+  <label><input type="radio" name="q5"> A flower</label>
+  <label><input type="radio" name="q5" data-letter="b"> A bear</label>
+</div>
+
+<!-- QUESTION 6 -->
+<div class="question">
+  <p>6. What is the only time you shouldnt listen to your supervisor?</p>
+  <label><input type="radio" name="q6"> The usual orders of clients</label>
+  <label><input type="radio" name="q6" data-letter="c"> The making of Bolle</label>
+  <label><input type="radio" name="q6"> You should ALWAYS listen to THE supervisor.</label>
+</div>
+
+<!-- FINAL CODE INPUT -->
+<div id="final">
+  <p><b>ENTER THE FINAL ACCESS KEY</b></p>
+  <input type="text" id="code" placeholder="eg: mccartney1414">
+  <br>
+  <button onclick="checkCode()">SUBMIT</button>
+  <p id="error"></p>
+</div>
+
+<script>
+function checkCode() {
+  const finalKey = "michie6767"; // <-- the key you want
+
+  // Step 1: make sure all questions were answered correctly
+  let allCorrect = true;
+  for (let i = 1; i <= 6; i++) {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (!selected || !selected.dataset.letter) {
+      allCorrect = false;
+      break;
+    }
+  }
+
+  if (!allCorrect) {
+    document.getElementById("error").textContent = "Please answer all questions correctly first.";
+    return;
+  }
+
+  // Step 2: check if the typed key matches
+  const input = document.getElementById("code").value.toLowerCase();
+
+  if (input === finalKey) {
+    window.location.href = "goodjob.html";
+  } else {
+    document.getElementById("error").textContent = "INCORRECT ACCESS KEY.";
+  }
+}
+</script>
+
+
+</body>
+</html>
